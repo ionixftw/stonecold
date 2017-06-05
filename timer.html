@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Timer</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    @font-face {
+        font-family: "Myfont";
+        src: url("Orbitron-Regular.ttf");
+    }
+    body {
+        background: black;
+        color: white;
+        overflow: hidden;
+
+        /*min-width: 1300px;*/
+    }
+    h1 {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        font-size: 12vw;
+        height: auto;
+        font-family: "Myfont",Arial;
+        font-weight: bold;
+        -webkit-animation: timercolor 1s ease-in-out infinite;
+        animation: timercolor 1s ease-in-out infinite;
+        letter-spacing: 5;
+    }
+    @keyframes timercolor {
+        0% {color:white; margin-top: -10vh;}
+        100% {color:black;margin-top: 100vh;}
+    }
+    p {
+        font-family: "Myfont";
+        font-size: 1vw;
+        text-align: center;
+        width: 100%;
+    }
+    #middle {
+        position: fixed;
+        top:45%;
+        left: 0px;
+        width:100%;
+        text-align: center;
+        height: auto;
+        font-size: 2.5vw;
+        font-family: "Myfont";
+        z-index: 1;
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+<body id="body">
+    <div id="middle">Believe you can and you're halfway there.  -Theodore Roosevelt</div>
+    <h1 id="time"></h1>
+    <p>Project ionix &copy; 2017</p>
+    <script>
+    var num = 0;
+    var day, hour, minute, second = 0;
+    var sign = ":";
+    var str = "";    
+    function converter(s) {
+        second = Math.floor(s % 60);
+        minute = Math.floor((s / 60) % 60);
+        hour = Math.floor(s / (60 * 60) % 24);
+        day = Math.floor(s / (60*60*24) % 7);
+        str = leadingZero(day) + sign + leadingZero(hour) + sign + leadingZero(minute) + sign + leadingZero(second);
+        return str;
+    }
+    function leadingZero(input){
+        if (input < 10) {
+            return "0" + input;
+        } else {
+            return input;
+        }
+    }
+    function timer() {
+        num++;
+        document.getElementById("time").innerHTML = converter(num);
+        
+    }
+    var timerStart = setInterval(timer, 1000);
+    
+    </script>
+</body>
+</html>
