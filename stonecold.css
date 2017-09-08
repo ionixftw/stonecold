@@ -1,0 +1,6 @@
+  body {font-family: Arial; background: #1f1f1f; color: white; margin: 0; padding: 0;}
+    ul {list-style-type: none;margin:0; padding: 0;}
+    li {float:left; margin: 5px;}
+    li a{  display:block; padding: 14px 16px; font-weight: bold; background: #4CAF50; text-decoration: none; text-align: center;  color: white; }
+    li a:hover {background: #111; color: white;}
+    h1 {clear: both; color:#111; width: 100%; background: #00b8d4;padding: 14px 20px;margin:0;}
