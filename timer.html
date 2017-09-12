@@ -16,14 +16,16 @@
         color: white;
    
     }
-	
+	.small {
+	font-size: 8vw;
+	}
     h1 {
         position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
         width: 100%;
+		font-size: 12vw;
         text-align: center;
-        font-size: 12vw;
         height: auto;
         font-family: "Myfont",Arial;
         font-weight: bold;
@@ -72,7 +74,7 @@
         minute = Math.floor((s / 60) % 60);
         hour = Math.floor(s / (60 * 60) % 24);
         day = Math.floor(s / (60*60*24) % 7);
-        str = leadingZero(day) + sign + leadingZero(hour) + sign + leadingZero(minute) + sign + leadingZero(second);
+        str = leadingZero(day) + sign + leadingZero(hour) + sign + leadingZero(minute) + sign + "<span class='small'>" +leadingZero(second)+"</span>";
         return str;
     }
     function leadingZero(input){
