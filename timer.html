@@ -37,6 +37,10 @@
         0% {color:#f5f5f5;}
         100% {color:#1f1f1f;}
     }
+	@keyframes counter {
+	     100% {color:#f5f5f5;}
+			0% {color:#1f1f1f;}
+	}
 	    #counter {
 	    position: absolute;
 		top:50%;
@@ -48,8 +52,8 @@
 		width:100%;
         font-family: "Myfont",Arial;
         font-weight: bold;
-		color: #1f1f1f;
-		background: white;
+		 -webkit-animation: counter 1s ease-in infinite;
+        animation: counter 1s ease-in infinite;
 		padding: 0;
 	    }
     </style>
@@ -67,7 +71,7 @@
 	document.addEventListener("keydown",counter);
 	function counter() {
 	a++;
-	document.getElementById("counter").innerHTML = a;
+	document.getElementById("counter").innerHTML =  "TOTAL : " + a;
 	}
     function converter(s) {
         second = Math.floor(s % 60);
