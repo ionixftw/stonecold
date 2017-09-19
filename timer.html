@@ -81,9 +81,28 @@
         minute = Math.floor((s / 60) % 60);
         hour = Math.floor(s / (60 * 60) % 24);
         day = Math.floor(s / (60*60*24) % 7);
-        str = leadingZero(day) + sign + leadingZero(hour) + sign + leadingZero(minute) + sign + "<span class='small'>" +leadingZero(second)+"</span>";
+	str = minifier(second, minute, hour, day,sign);
         return str;
     }
+	    
+	function minifier(s,m,h,d,sign) {
+	if (d > 0){
+	str = leadingZero(day) + sign + leadingZero(hour) + sign + leadingZero(minute) + sign + "<span class='small'>" +leadingZero(second)+"</span>";
+	return str;
+	}
+	else if (h > 0) {
+	str = leadingZero(hour) + sign + leadingZero(minute) + sign + "<span class='small'>" +leadingZero(second)+"</span>";
+	return str;
+	}
+	else if (m > 0){
+	str = leadingZero(minute) + sign + "<span class='small'>" +leadingZero(second)+"</span>";
+	return str;
+	} 
+	else {
+	str = "<span class='small'>" +leadingZero(second)+"</span>";
+	return str;
+	}
+	}
     function leadingZero(input){
         if (input < 10) {
             return "0" + input;
