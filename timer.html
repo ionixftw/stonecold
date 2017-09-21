@@ -104,9 +104,8 @@
 	document.addEventListener("keydown",counter);
 	function counter() {
 	a++;
-	ratio = (a / (num / 60)).toFixed(2);
 	document.getElementById("counter").innerHTML = a;
-	document.getElementById("ratio").innerHTML = ratio;
+	
 	}
     function converter(s) {
         second = Math.floor(s % 60);
@@ -145,7 +144,8 @@
     function timer() {
         num++;
         document.getElementById("time").innerHTML = converter(num);
-        
+		ratio = (a / (num / 60)).toFixed(2);
+        document.getElementById("ratio").innerHTML = ratio;
     }
     var timerStart = setInterval(timer, 1000);
     
