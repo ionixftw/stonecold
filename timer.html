@@ -18,7 +18,7 @@
     }
 	.small {
 	font-size: 8vw;
-	color:#00c853;
+	color:#00C853;
 	}
     h1 {
         position: absolute;
@@ -39,41 +39,74 @@
         100% {color:#1f1f1f;}
     }
 	@keyframes counter {
-	     	0% {color:#5efc82;}
-		100% {color:#00c853;}
+	     	0%{color:#F44336;}
+			20%{color:#E91E63;}
+			30%{color:#9C27B0;}
+			40%{color:#3F51B5;}
+			50%{color:#673AB7;}
+			60%{color:#2196F3;}
+			70%{color:#03A9F4;}
+			80%{color:#00BCD4;}
+			90%{color:#009688;}
+			100%{color:#F44336;}
 		
 	}
-	    #counter {
+	@keyframes ratio {
+	     	0%{color:#8BC34A;}
+			20%{color:#CDDC39;}
+			30%{color:#FFEB3B;}
+			40%{color:#FFC107;}
+			50%{color:#FF9800;}
+			60%{color:#FF5722;}
+			70%{color:#795548;}
+			80%{color:#9E9E9E;}
+			90%{color:#4CAF50;}
+			100%{color:#8BC34A;}	
+	}
+	    #counter, #ratio {
 	    position: absolute;
 		top:50%;
 		display:block;
-		transform: translatey(50%);
 		text-align: center;
         font-size: 12vw;
         height: auto;
 		width:100%;
         font-family: "Myfont",Arial;
         font-weight: bold;
-	-webkit-animation: counter 1s ease-in infinite;
-        animation: counter 1s ease-in-out infinite;
+	
 		padding: 0;
 	    }
+		#counter {
+		color:#009688;
+		transform: translatey(50%);
+		-webkit-animation: counter 5s linear infinite;
+        animation: counter 5s linear infinite;
+		}
+		#ratio {
+		-webkit-animation: ratio 6s linear uinfinite;
+        animation: ratio 6s linear infinite;
+		transform: translatey(-150%);
+		}
     </style>
 </head>
 <body>
+	<div id="ratio">0</div>
     <h1 id="time"></h1>
 	<div id="counter">0</div>
     <script>
+	var ratio= 0;
     var num= 0;
 	var a = 0;
     var day, hour, minute, second = 0;
     var sign = ":";
     var str = "";   
-	document.getElementById("counter").addEventListener("click",counter);
+	document.addEventListener("click",counter);
 	document.addEventListener("keydown",counter);
 	function counter() {
 	a++;
+	ratio = (a / (num / 60)).toFixed(2);
 	document.getElementById("counter").innerHTML = a;
+	document.getElementById("ratio").innerHTML = ratio;
 	}
     function converter(s) {
         second = Math.floor(s % 60);
