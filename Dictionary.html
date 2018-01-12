@@ -218,7 +218,7 @@
         <form action="javascript:searchWord();" method="POST">
             <input type="text" id="wordSearch" placeholder="Input your search term here and press Enter..">
         </form>
-        <p id="count"></p>
+        
     </div>
     <br>
     <div id="container">
@@ -242,37 +242,10 @@
                 start = 0;
             } 
         }
-        function count() {
-            target = document.getElementById("count");
-            start++;
-            str = convert(start);
-            function convert(s) {
-                var senti = s%100;
-                s = Math.floor(s/100);
-                var minute = Math.floor((s/60)%60);
-                var second = s%60;
-                var hour = Math.floor((s/3600) % 24);
-                if (minute < 10) {
-                    minute = "0" + minute;
-                }
-                
-                if (second < 10) {
-                    second = "0" + second;
-                }
-                if (senti < 10) {
-                    senti = "0" + senti;
-                }
-                if (hour < 10) {
-                    hour = "0" + hour;
-                }
-                var str = hour + ":" + minute + ":" + second + ":" + senti;
-                return str;
-            }
-            target.innerHTML = str;
-        }
+        
         function searchWord() {
             var word = document.getElementById("wordSearch").value;
-            var bdword = "https://www.bdword.com/english-to-bengali-meaning-" + word;
+            var bdword = "https://www.bdword.com/index.php?keyb=1&q=" + word;
             var shabdkosh = "http://www.shabdkosh.com/bn/translate?e=" + word + "&l=bn";
             var dictionary = "http://www.dictionary.com/browse/" + word + "?s=t";
             var cambridge = "http://dictionary.cambridge.org/dictionary/english/" + word;
@@ -286,7 +259,6 @@
                 }
             
         }
-        setInterval(count,10);
     </script>
 
 </body>
