@@ -5,6 +5,6 @@ font-family: "custom";
 body {font-family: "custom",Arial; background: #1f1f1f; color: white; margin: 0; padding: 0;}
     ul {list-style-type: none;margin:0; padding: 0;}
     li {float:left; margin: 5px;}
-    li a{  display:block; padding: 14px 16px; font-weight: bold; background: #F2AE72; text-decoration: none; text-align: center;  color: white; letter-spacing: 2px;}
+    li a{  display:block; padding: 14px 16px; font-weight: bold; background: #B71C1C; text-decoration: none; text-align: center;  color: white; letter-spacing: 2px;}
     li a:hover {background: #111; color: white;}
     h1 {clear: both; color:white; border-left: 5px solid white;padding: 14px 20px;margin:0;}
