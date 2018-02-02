@@ -3,157 +3,21 @@
 <head>
     <title>Dictionary</title>
     <style>
-        /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-        
-        html,
-        body,
-        div,
-        span,
-        applet,
-        object,
-        iframe,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        blockquote,
-        pre,
-        a,
-        abbr,
-        acronym,
-        address,
-        big,
-        cite,
-        code,
-        del,
-        dfn,
-        em,
-        img,
-        ins,
-        kbd,
-        q,
-        s,
-        samp,
-        small,
-        strike,
-        strong,
-        sub,
-        sup,
-        tt,
-        var,
-        b,
-        u,
-        i,
-        center,
-        dl,
-        dt,
-        dd,
-        ol,
-        ul,
-        li,
-        fieldset,
-        form,
-        label,
-        legend,
-        table,
-        caption,
-        tbody,
-        tfoot,
-        thead,
-        tr,
-        th,
-        td,
-        article,
-        aside,
-        canvas,
-        details,
-        embed,
-        figure,
-        figcaption,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        output,
-        ruby,
-        section,
-        summary,
-        time,
-        mark,
-        audio,
-        video {
-            margin: 0;
-            padding: 0;
-            border: 0;
-            font-size: 100%;
-            vertical-align: baseline;
-        }
-        /* HTML5 display-role reset for older browsers */
-        
-        article,
-        aside,
-        details,
-        figcaption,
-        figure,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        section {
-            display: block;
-        }
-        
-        body {
-            line-height: 1;
-        }
-        
-        ol,
-        ul {
-            list-style: none;
-        }
-        
-        blockquote,
-        q {
-            quotes: none;
-        }
-        
-        blockquote:before,
-        blockquote:after,
-        q:before,
-        q:after {
-            content: '';
-            content: none;
-        }
-        
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
-        /* end of css reset*/
-        /* css starts from here..*/
         body {
             background: #1f1f1f;
             color: #efefef;
         }
-        #searchDiv {
+        #topBar {
             position: fixed;
             background:darkcyan;
             left: 0px;
+            min-width: 967px;
             top: 0px;
             width: 100%;
-            min-width: 967px;
             height: 2em;
             z-index: 1;
         }
-        #searchDiv a {
+        #topBar a {
             position: absolute;
             left: 0;
             top: 0;
@@ -161,26 +25,14 @@
             text-align: center;
             font-size: 2em;
             font-weight: bold;
-            font-family: cursive;
+            font-family: Arial;
             width: 30%;
             height: auto;
             overflow: hidden;
             display: block;
             color: black;
         }
-        #searchDiv p {
-            position: absolute;
-            top: 0px;
-            left: 70%;
-            color:white;
-            width: 30%;
-            height: auto;
-            text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            font-family: cursive;
-        }
-        #wordSearch {
+        #topBarInput {
             position: relative;
             margin-left: 30%;
             width: 40%;
@@ -189,10 +41,9 @@
             font-weight: bold;
             letter-spacing: 2;
         }
-        #container {
+        #mainContainer {
              
             color: white;           
-            /*margin: 1em 0 0 0 auto;*/
             margin-top: 1em;
             width: 100%;
             min-width: 967px;
@@ -205,7 +56,7 @@
             margin: 1em 0 1em 1em;
             width: 30%;
             min-width: 300px;
-            height: 500px;
+            height: 600px;
             float: left;
         }
        
@@ -213,46 +64,43 @@
 </head>
 
 <body onload="getFocus()">
-    <div id="searchDiv">
+    <div id="topBar">
         <a href="https://www.cram.com/dashboard-flashcards#flashcards" target="_blank">Make a flashcard!</a>
         <form action="javascript:searchWord();" method="POST">
-            <input type="text" id="wordSearch" placeholder="Input your search term here and press Enter..">
+            <input type="text" id="topBarInput" placeholder="Input your search term here and press Enter..">
         </form>
         
     </div>
     <br>
-    <div id="container">
+    <div id="mainContainer">
     <iframe id="bdword" src="about:blank"></iframe>
     <iframe id="e2b" src="about:blank"></iframe>
     <iframe id="dictionary" src="about:blank"></iframe>
-    <iframe id="cambridge" src="about:blank"></iframe> 
+    <iframe id="cambridge" src="about:blank"></iframe>
+    <iframe id="merriam" src="about:blank"></iframe> 
     <iframe id="vocabulary" src="about:blank"></iframe>
     <iframe id="yourdictionary" src="about:blank"></iframe>
-    <iframe id="shabdkosh" src="about:blank"></iframe>
+    
     </div>
     <script>
-        var start = 0;
-        var str;
-        var target;
         function getFocus() {
-            var elem = document.getElementById("wordSearch");
+            var elem = document.getElementById("topBarInput");
             var isFocused = (document.activeElement == elem);
             if (!isFocused){
                 elem.focus();
-                start = 0;
             } 
         }
         
         function searchWord() {
-            var word = document.getElementById("wordSearch").value;
+            var word = document.getElementById("topBarInput").value;
             var bdword = "https://www.bdword.com/index.php?keyb=1&q=" + word;
-            var shabdkosh = "http://www.shabdkosh.com/bn/translate?e=" + word + "&l=bn";
+            var merriam = "https://www.merriam-webster.com/dictionary/" + word;
             var dictionary = "http://www.dictionary.com/browse/" + word + "?s=t";
             var cambridge = "http://dictionary.cambridge.org/dictionary/english/" + word;
             var e2b = "http://www.english-bangla.com/dictionary/" + word;
             var vocabulary = "https://www.vocabulary.com/dictionary/" + word;
             var yourdictionary = "http://sentence.yourdictionary.com/" + word;
-            var listSrc = {"bdword":bdword, "shabdkosh": shabdkosh, "dictionary":dictionary, "cambridge": cambridge, "e2b": e2b, "vocabulary": vocabulary, "yourdictionary": yourdictionary};
+            var listSrc = {"bdword":bdword, "merriam": merriam, "dictionary":dictionary, "cambridge": cambridge, "e2b": e2b, "vocabulary": vocabulary, "yourdictionary": yourdictionary};
             for ( var props in listSrc) {
                 document.getElementById(props).src = listSrc[props];
                 document.getElementById(props).addEventListener("load",getFocus);
