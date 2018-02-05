@@ -1,0 +1,83 @@
+
+@font-face {
+    font-family: "Myfont";
+    src: url("../fonts/Orbitron-Regular.ttf");
+}
+body {
+    background: #1f1f1f;
+    color: white;
+
+}
+
+.small, .small-animated {font-size: 8vw;}
+.small-animated {-webkit-animation: timercolor 1s ease-in-out infinite;
+animation: timercolor 1s ease-in-out infinite;}
+.smaller {font-size: 6vw;-webkit-animation: timercolor 1s ease-in-out infinite;
+animation: timercolor 1s ease-in-out infinite;}
+
+
+#time {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    font-size: 12vw;
+    text-align: center;
+    height: auto;
+    font-family: "Myfont",Arial;
+    font-weight: bold;
+    letter-spacing: 5;
+}
+@keyframes timercolor {
+    0% {color:#00C853;}
+    100% {color:#1f1f1f;}
+}
+@keyframes counter {
+         0%{color:#F44336;}
+        20%{color:#E91E63;}
+        30%{color:#9C27B0;}
+        40%{color:#3F51B5;}
+        50%{color:#673AB7;}
+        60%{color:#2196F3;}
+        70%{color:#03A9F4;}
+        80%{color:#00BCD4;}
+        90%{color:#009688;}
+        100%{color:#F44336;}
+    
+}
+@keyframes ratio {
+         0%{color:#8BC34A;}
+        20%{color:#CDDC39;}
+        30%{color:#FFEB3B;}
+        40%{color:#FFC107;}
+        50%{color:#FF9800;}
+        60%{color:#FF5722;}
+        70%{color:#795548;}
+        80%{color:#9E9E9E;}
+        90%{color:#4CAF50;}
+        100%{color:#8BC34A;}	
+}
+    #counter, #ratio {
+    position: absolute;
+    top:50%;
+    display:block;
+    text-align: center;
+    font-size: 12vw;
+    height: auto;
+    width:100%;
+    font-family: "Myfont",Arial;
+    font-weight: bold;
+
+    padding: 0;
+    }
+    #counter {
+    color:#009688;
+    transform: translatey(50%);
+    -webkit-animation: counter 5s linear infinite;
+    animation: counter 5s linear infinite;
+    }
+    #ratio {
+    -webkit-animation: ratio 6s linear uinfinite;
+    animation: ratio 6s linear infinite;
+    transform: translatey(-150%);
+    }

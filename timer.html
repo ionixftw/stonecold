@@ -2,92 +2,8 @@
 <head>
     <title>Timer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-    @font-face {
-        font-family: "Myfont";
-        src: url("Orbitron-Regular.ttf");
-    }
-    body {
-        background: #1f1f1f;
-        color: white;
-   
-    }
-	.small {
-	font-size: 8vw;
-	color:#00C853;
-	}
-    h1 {
-        position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-        width: 100%;
-		font-size: 12vw;
-        text-align: center;
-        height: auto;
-        font-family: "Myfont",Arial;
-        font-weight: bold;
-        -webkit-animation: timercolor 1s ease-in-out infinite;
-        animation: timercolor 1s ease-in-out infinite;
-        letter-spacing: 5;
-    }
-    @keyframes timercolor {
-        0% {color:#f5f5f5;}
-        100% {color:#1f1f1f;}
-    }
-	@keyframes counter {
-	     	0%{color:#F44336;}
-			20%{color:#E91E63;}
-			30%{color:#9C27B0;}
-			40%{color:#3F51B5;}
-			50%{color:#673AB7;}
-			60%{color:#2196F3;}
-			70%{color:#03A9F4;}
-			80%{color:#00BCD4;}
-			90%{color:#009688;}
-			100%{color:#F44336;}
-		
-	}
-	@keyframes ratio {
-	     	0%{color:#8BC34A;}
-			20%{color:#CDDC39;}
-			30%{color:#FFEB3B;}
-			40%{color:#FFC107;}
-			50%{color:#FF9800;}
-			60%{color:#FF5722;}
-			70%{color:#795548;}
-			80%{color:#9E9E9E;}
-			90%{color:#4CAF50;}
-			100%{color:#8BC34A;}	
-	}
-	    #counter, #ratio {
-	    position: absolute;
-		top:50%;
-		display:block;
-		text-align: center;
-        font-size: 12vw;
-        height: auto;
-		width:100%;
-        font-family: "Myfont",Arial;
-        font-weight: bold;
-	
-		padding: 0;
-	    }
-		#counter {
-		color:#009688;
-		transform: translatey(50%);
-		-webkit-animation: counter 5s linear infinite;
-        animation: counter 5s linear infinite;
-		}
-		#ratio {
-		-webkit-animation: ratio 6s linear uinfinite;
-        animation: ratio 6s linear infinite;
-		transform: translatey(-150%);
-		}
-    </style>
+	<link rel="stylesheet" type="text/css" href="css/cssReset.css">
+	<link rel="stylesheet" type="text/css" href="css/timer.css">
 </head>
 <body>
 	<div id="ratio">0</div>
@@ -112,25 +28,25 @@
         minute = Math.floor((s / 60) % 60);
         hour = Math.floor(s / (60 * 60) % 24);
         day = Math.floor(s / (60*60*24) % 7);
-	str = minifier(second, minute, hour, day,sign);
+	str = minifier(second, minute, hour, day);
         return str;
     }
 	    
-	function minifier(s,m,h,d,sign) {
+	function minifier(s,m,h,d) {
 	if (d > 0){
-	str = leadingZero(day) + sign + "<span class='small'>" + leadingZero(hour) + sign + leadingZero(minute) + sign  +leadingZero(second)+"</span>";
+	str = leadingZero(day) + sign + "<span class='small'>" + leadingZero(hour) + sign + leadingZero(minute) + sign  +"<span class='smaller'>"+leadingZero(second)+"</span></span>";
 	return str;
 	}
 	else if (h > 0) {
-	str = leadingZero(hour) + sign +"<span class='small'>"+ leadingZero(minute) + sign +leadingZero(second)+"</span>";
+	str = leadingZero(hour) + sign +"<span class='small'>"+ leadingZero(minute) + sign +"<span class='smaller'>"+leadingZero(second)+"</span></span>";
 	return str;
 	}
 	else if (m > 0){
-	str = leadingZero(minute) + sign + "<span class='small'>" +leadingZero(second)+"</span>";
+	str = leadingZero(minute) + sign + "<span class='small'>" +"<span class='smaller'>"+leadingZero(second)+"</span></span>";
 	return str;
 	} 
 	else {
-	str = leadingZero(second);
+	str = "<span class='small-animated'>"+leadingZero(second)+"</span>";
 	return str;
 	}
 	}
