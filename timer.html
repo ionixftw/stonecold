@@ -9,13 +9,14 @@
 
 <body>
 	<div id="ratio">0</div>
-	<h1 id="time"></h1>
+	<div id="time"></div>
 	<div id="counter">0</div>
 	<script>
 		var ratio = 0;
 		var num = 0;
 		var a = 0;
 		var day, hour, minute, second = 0;
+		var d, h, m, s = 0;
 		var sign = ":";
 		var str = "";
 		document.addEventListener("click", counter);
@@ -32,25 +33,30 @@
 			minute = Math.floor((s / 60) % 60);
 			hour = Math.floor(s / (60 * 60) % 24);
 			day = Math.floor(s / (60 * 60 * 24) % 7);
-			str = minifier(second, minute, hour, day);
+			str = minifier();
 			return str;
 		}
 
-		function minifier(s, m, h, d) {
-			if (d > 0) {
-				str = leadingZero(day) + sign + "<span class='small'>" + leadingZero(hour) + sign + leadingZero(minute) + sign +
-					"<span class='smaller'>" + leadingZero(second) + "</span></span>";
+		function minifier() {
+
+			d = leadingZero(day) + "<span class='arial'>d</span>";
+			h = leadingZero(hour) + "<span class='arial'>h</span>";
+			m = leadingZero(minute) + "<span class='arial'>m</span>";
+			s = leadingZero(second) + "<span class='arial'>s</span>";
+			if (day > 0) {
+				str = d + sign + "<span class='small'>" + h + sign + m + sign +
+					"<span class='smaller animated'>" + s + "</span></span>";
 				return str;
-			} else if (h > 0) {
-				str = leadingZero(hour) + sign + "<span class='small'>" + leadingZero(minute) + sign + "<span class='smaller'>" +
-					leadingZero(second) + "</span></span>";
+			} else if (hour > 0) {
+				str = h + sign + "<span class='small'>" + m + sign + "<span class='smaller animated'>" +
+					s + "</span></span>";
 				return str;
-			} else if (m > 0) {
-				str = leadingZero(minute) + sign + "<span class='small'>" + "<span class='smaller'>" + leadingZero(second) +
+			} else if (minute > 0) {
+				str = m + sign + "<span class='small'><span class='smaller animated'>" + s +
 					"</span></span>";
 				return str;
 			} else {
-				str = "<span class='small-animated'>" + leadingZero(second) + "</span>";
+				str = "<span class='small animated'>" + s + "</span>";
 				return str;
 			}
 		}
@@ -64,6 +70,9 @@
 		}
 
 		function timer() {
+			if (num >= 86400 * 7) {
+				num = 0;
+			}
 			num++;
 			document.getElementById("time").innerHTML = converter(num);
 			ratio = (a / (num / 60)).toFixed(2);
