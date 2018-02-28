@@ -2,12 +2,9 @@
     font-family: "Myfont";
     src: url("../fonts/Orbitron-Regular.ttf");
 }
-@font-face {
-    font-family: "Myfonttwo";
-    src: url("../fonts/RobotoCondensed-Light.ttf");
-}
+
 .arial {
-    font-family: "Myfonttwo";
+    font-family: Arial;
     font-size: 3vw;
 }
 body {
