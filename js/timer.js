@@ -1,6 +1,6 @@
 // Deadmau5 - Strobe
 var ratio = 0;
-var num = 55;
+var num = 0;
 var totalCount = 0;
 var day, hour, minute, second = 0;
 var d, h, m, s = 0;
