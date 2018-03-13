@@ -9,6 +9,11 @@ function getFocus() {
 
 function searchWord() {
     var word = document.getElementById("topBarInput").value;
+    if (word == "") {
+       alert("Search field cannot be empty!");
+        return 0;    
+    }
+    document.getElementById("topBarInput").value = "";
     var bdword = "https://www.bdword.com/index.php?keyb=1&q=" + word;
     var merriam = "https://www.merriam-webster.com/dictionary/" + word;
     var dictionary = "http://www.dictionary.com/browse/" + word + "?s=t";
@@ -27,7 +32,7 @@ function searchWord() {
     };
     for (var props in listSrc) {
         document.getElementById(props).src = listSrc[props];
-        document.getElementById(props).addEventListener("load", getFocus);
+        // document.getElementById(props).addEventListener("load", getFocus);
     }
-
+    setInterval(getFocus, 1000);
 }
