@@ -10,9 +10,7 @@ body {
 }
 #topBar {
     position: fixed;
-    background:darkcyan;
-    -webkit-animation: colors 5s ease-in-out infinite;
-    animation: colors 5s ease-in-out infinite;
+    background: #1f469c;
     left: 0px;
     min-width: 960px;
     top: 0px;
@@ -59,36 +57,4 @@ iframe {
     min-width: 300px;
     height: 600px;
     float: left;
-}
-@keyframes colors {
-    0% {
-        background: rgb(77, 121, 26);
-    }
-    20% {
-        background: rgb(104, 112, 35);
-    }
-    30% {
-        background: rgb(112, 101, 4);
-    }
-    40% {
-        background: rgb(107, 92, 48);
-    }
-    50% {
-        background: rgb(112, 9, 78);
-    }
-    60% {
-        background: rgb(146, 88, 70);
-    }
-    70% {
-        background: #42342f;
-    }
-    80% {
-        background: #9E9E9E;
-    }
-    90% {
-        background: rgb(61, 122, 112);
-    }
-    100% {
-        background: rgb(92, 2, 95);
-    }
 }
