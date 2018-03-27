@@ -10,6 +10,8 @@
 body {
     background: #1f1f1f;
     color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .small {
@@ -17,20 +19,35 @@ body {
 }
 
 .animated {
-    -webkit-animation: timercolor 1s ease-in-out infinite;
-    animation: timercolor 1s ease-in-out infinite;
+    color: #00C853;
 }
 
 .smaller {
     font-size: 6vw;
 }
+.smallest {
+    font-size: 3vw;
+}
 
+#deci {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    font-size: 80vw;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:grey;
+    opacity: 0.07;
+    z-index: -1;
+}
 #time {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    font-size: 12vw;
+    font-size: 14vw;
     text-align: center;
     height: auto;
     font-family: "Myfont", Arial;
@@ -38,7 +55,31 @@ body {
     letter-spacing: 5;
 }
 
-@keyframes timercolor {
+#counter,
+#ratio {
+    position: absolute;
+    top: 50%;
+    display: block;
+    text-align: center;
+    font-size: 14vw;
+    height: auto;
+    width: 100%;
+    font-family: "Myfont", Arial;
+    font-weight: bold;
+    padding: 0;
+}
+
+#counter {
+    color: #0240c5;
+    transform: translatey(50%);
+    
+}
+
+#ratio {
+    color:#ca3900;
+    transform: translatey(-150%);
+}
+/* @keyframes timercolor {
     0% {
         color: #00C853;
     }
@@ -78,9 +119,9 @@ body {
     100% {
         color: #F44336;
     }
-}
+} */
 
-@keyframes ratio {
+/* @keyframes ratio {
     0% {
         color: #8BC34A;
     }
@@ -111,31 +152,4 @@ body {
     100% {
         color: #8BC34A;
     }
-}
-
-#counter,
-#ratio {
-    position: absolute;
-    top: 50%;
-    display: block;
-    text-align: center;
-    font-size: 12vw;
-    height: auto;
-    width: 100%;
-    font-family: "Myfont", Arial;
-    font-weight: bold;
-    padding: 0;
-}
-
-#counter {
-    color: #009688;
-    transform: translatey(50%);
-    -webkit-animation: counter 5s linear infinite;
-    animation: counter 5s linear infinite;
-}
-
-#ratio {
-    -webkit-animation: ratio 6s linear uinfinite;
-    animation: ratio 6s linear infinite;
-    transform: translatey(-150%);
-}
+} */
