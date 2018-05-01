@@ -1,42 +1,80 @@
 @font-face {
-font-family: "custom";
-  src: url("../fonts/Orbitron-Regular.ttf");
-}  
-body {font-family: "custom",Arial; background: #1f1f1f; color: white; margin: 0; padding: 0;}
-    ul {list-style-type: none;margin:0; padding: 0;}
-    li {float:left; margin: 5px;}
-    li a{  display:block; padding: 14px 16px; font-weight: bold;  animation: colors 60s ease-in-out infinite; text-decoration: none; text-align: center;  color: white; letter-spacing: 2px;}
-    li a:hover {color: black;}
-    h1 {font-size: 2em;clear: both; color:white; border-left: 5px solid white;padding: 14px 20px;margin:0;}
-    @keyframes colors {
-      0% {
-          background: #1f469c;
-      }
-      20% {
-          background: rgb(104, 112, 35);
-      }
-      30% {
-          background: rgb(112, 101, 4);
-      }
-      40% {
-          background: rgb(107, 92, 48);
-      }
-      50% {
-          background: rgb(112, 9, 78);
-      }
-      60% {
-          background: rgb(146, 88, 70);
-      }
-      70% {
-          background: #42342f;
-      }
-      80% {
-          background: #9E9E9E;
-      }
-      90% {
-          background: rgb(61, 122, 112);
-      }
-      100% {
-          background: rgb(92, 2, 95);
-      }
-  }
+    font-family: "custom";
+    src: url("../fonts/Orbitron-Regular.ttf");
+}
+
+body {
+    font-family: "custom", Arial;
+    background: #1f1f1f;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+    margin: 5px;
+}
+
+li a {
+    display: block;
+    padding: 14px 16px;
+    font-weight: bold;
+    animation: colors 60s ease-in-out infinite;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+}
+
+li a:hover {
+    color: black;
+}
+
+h1 {
+    font-size: 2em;
+    clear: both;
+    color: white;
+    border-left: 5px solid white;
+    padding: 14px 20px;
+    margin: 0;
+}
+
+@keyframes colors {
+    0% {
+        background: #1f469c;
+    }
+    20% {
+        background: rgb(104, 112, 35);
+    }
+    30% {
+        background: rgb(112, 101, 4);
+    }
+    40% {
+        background: rgb(107, 92, 48);
+    }
+    50% {
+        background: rgb(112, 9, 78);
+    }
+    60% {
+        background: rgb(146, 88, 70);
+    }
+    70% {
+        background: #42342f;
+    }
+    80% {
+        background: #9E9E9E;
+    }
+    90% {
+        background: rgb(61, 122, 112);
+    }
+    100% {
+        background: rgb(92, 2, 95);
+    }
+}

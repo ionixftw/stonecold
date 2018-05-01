@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "font1";
+    src: url("../fonts/Georgia.ttf");
+}
+@font-face {
+    font-family: "font2";
+    src: url("../fonts/Baskerville.ttf");
+}
+
+@font-face {
+    font-family: "font3";
+    src: url("../fonts/Palatino.ttf");
+}
+
+@font-face {
+    font-family: "font4";
+    src: url("../fonts/PalatinoUnicode.ttf");
+}
+
+body { color: navajowhite;
+    background: #1f1f1f;
+    margin-right: 15%;
+    margin-left: 15%;
+    font-family: "font1", serif;
+    font-size: 1.8em;
+}
+td{
+    font-size: 1.5em;
+}
+p {text-indent: 3%;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em; }
+
+h1, h2, h3, h4, h5, h6 {text-align: center; font-style: normal;
+    font-weight: normal; line-height: 1.5; margin-top: .5em; margin-bottom:
+        .5em;}
+
+h1 {font-size: 200%;}
+h2 {font-size: 175%;}
+h3 {font-size: 150%;}
+h4 {font-size: 120%;}
+
+p.poem {text-indent: 0%;
+    margin-left: 10%;
+    font-size: 90%;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+
+p.letter {text-indent: 0%;
+    margin-top: 1.5em;
+    margin-left: 10%;
+    margin-right: 10%; }
+
+p.letter2 {text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+
+p.right {text-align: right;
+    margin-right: 10%;
+    margin-top: 1em;
+    margin-bottom: 1em; }
+
+p.noindent {text-indent: 0% }
+
+p.footnote {font-size: small ;
+    text-indent: 0% ;
+    margin-left: 0% ;
+    margin-right: 0% }
+
+p.finis { font-size: larger ;
+    text-align: center ;
+    text-indent: 0% ;
+    margin-left: 0% ;
+    margin-right: 0% }
+
+a:link {color:brown; text-decoration:none}
+a:visited {color:olivedrab; text-decoration:none}
+a:hover {color:darkcyan}
