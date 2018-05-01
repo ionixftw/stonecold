@@ -1,45 +1,58 @@
 @font-face {
-    font-family: "custom";
+    font-family: "font1";
     src: url("../fonts/Orbitron-Regular.ttf");
     }
 body {
     background: #1f1f1f;
     color: #efefef;
-    font-family: "custom", Arial;
+    font-family: "font1",Arial;
     
 }
 #topBar {
     position: fixed;
     background: #1f469c;
-    left: 0px;
+    left: 0;
     min-width: 960px;
-    top: 0px;
+    top: 0;
     width: 100%;
     height: 2em;
+    font-size: 1em;
     z-index: 1;
 }
-#topBar a {
-    position: absolute;
-    left: 0;
-    top: 0;
-    text-decoration: none;
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
-    width: 30%;
-    height: auto;
-    overflow: hidden;
-    display: block;
-    color: white;
-}
+
 #topBarInput {
-    position: relative;
-    margin-left: 30%;
+    position: absolute;
+    left: 30%;
     width: 40%;
     height: 2em;
-    font-size: 1em;
     font-weight: bold;
-    letter-spacing: 2;
+    letter-spacing: 2px;
+    border:2px solid #1f469c;
+}
+#btn2,#btn1 {
+    position: absolute;
+    top:0;
+    background: transparent;
+    border: 2px solid #1f469c;
+    color: white;
+    width: 30%;
+    font-weight: bold;
+    height: 2em;
+    vertical-align: center;
+    font-family: "font1",Arial;
+    text-transform: uppercase;
+}
+
+#btn1 {
+    left:0;
+}
+#btn2 {
+    left:70%;
+}
+#btn2:hover, #btn1:hover {
+    border: 2px solid black;
+    background: white;
+    color: black;
 }
 #mainContainer {
     background: yellow;
