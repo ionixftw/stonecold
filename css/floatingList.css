@@ -36,6 +36,7 @@ li a:hover {
 }
 
 h1 {
+    font-family: "custom", Arial, sans-serif;
     font-size: 2em;
     clear: both;
     color: white;
